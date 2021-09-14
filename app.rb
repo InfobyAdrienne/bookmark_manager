@@ -10,10 +10,11 @@ class Bookmark < Sinatra::Base
   end
 
   get '/' do
-    'Bookmark'
+    erb :index
   end
 
   get '/bookmarks' do
+    erb :bookmarks
     bookmarks = [
       "http://www.makersacademy.com"
     ]
