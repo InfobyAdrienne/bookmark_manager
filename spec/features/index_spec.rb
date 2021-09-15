@@ -6,6 +6,6 @@ require 'capybara/rspec'
 feature 'Viewing the homepage' do
   scenario 'the index page shows content' do
     visit('/')
-    expect(page).to have_content('Bookmark')
+    expect(page).to have_content('Bookmark Manager')
   end
 end

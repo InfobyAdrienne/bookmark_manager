@@ -6,9 +6,7 @@ require 'capybara/rspec'
 
 feature 'Viewing the bookmarks' do 
     scenario "can see the bookmarks listed on the page" do 
-        visit ('/')
-        expect(page).to have_content "Bookmark"
-        click_button 'Bookmarks'
+        visit ('/bookmarks')
         expect(page).to have_content ("http://www.makersacademy.com")
     end 
 end 

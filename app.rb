@@ -2,9 +2,10 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/bookmark'
 
 # Describe what the class is doing
-class Bookmark < Sinatra::Base
+class BookmarkManager < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
@@ -13,16 +14,10 @@ class Bookmark < Sinatra::Base
     erb :index
   end
 
-  post '/bookmarks' do
-    @bookmarks = 
-      [
-        "http://www.makersacademy.com",
-        "https://www.cosmopolitan.com/",
-        "https://graziadaily.co.uk/",
-        "https://www.complex.com/uk",
-      ]
-    erb :bookmarks
-  end 
+  get '/bookmarks' do
+    @bookmarks = Bookmark.all
+    erb :'bookmarks/index'
+  end
 
   run! if app_file == $PROGRAM_NAME
 end

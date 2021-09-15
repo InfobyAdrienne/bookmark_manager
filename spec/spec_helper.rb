@@ -11,7 +11,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'simplecov-console'
-Capybara.app = Bookmark
+Capybara.app = BookmarkManager
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
